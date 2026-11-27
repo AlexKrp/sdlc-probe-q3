@@ -1,3 +1,3 @@
-probe q3
+g1 side
 line two
 
