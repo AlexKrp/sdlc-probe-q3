@@ -1,0 +1,21 @@
+name: ci
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: if [ -f FAIL ]; then echo "FAIL present"; exit 1; fi
+  slow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 60
+  skipme:
+    runs-on: ubuntu-latest
+    if: ${{ false }}
+    steps:
+      - run: echo never
