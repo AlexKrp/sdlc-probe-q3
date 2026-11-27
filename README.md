@@ -1,3 +1,3 @@
-probe q3
+conflict side
 line two
 
